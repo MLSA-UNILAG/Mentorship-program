@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html< lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <form method="POST">
+                <label>
+                    Username
+                <input type="text" name="Username" id="Username" required>
+            </label>
+            <br />
+                <label>
+                    Password
+                <input type="password" name="password" required>
+            </label>
+            <br />
+                Which of these colours do you like
+            <br />
+                <label for="red"> Red</label>
+                <input type="checkbox" name="red" id="red">
+            <br />
+                <label for="blue">Blue</label>
+                <input type="checkbox" name="blue" id="blue">
+            <br />
+                <label for="none">None</label>
+                <input type="checkbox" name="none" id="none">
+            <br />
+                Gender
+            <br />
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male" value="male">
+            <br />
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="female" value="female">
+            <br />
+                <label for="bio">Bio</label>
+                <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+            <br />
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </form>
+
+    </body>
+</html>
