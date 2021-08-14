@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html< lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="center">
+        <h1>Registration Form</h1>
+        <form method="POST">
+        </div>
+                <label>
+                    Username
+                <input type="text" name="Username" id="Username" required>
+            </label>
+            <br class="txt_field"/>
+                <label>
+                    Password
+                <input type="password" name="password" required>
+            </label>
+            <br class="txt_field"/>
+                Which of these colours do you like
+            <br class="question"/>
+                <label for="red"> Red</label>
+                <input type="checkbox" name="red" id="red">
+            <br class="colour"/>
+                <label for="blue">Blue</label>
+                <input type="checkbox" name="blue" id="blue">
+            <br class="colour"/>
+                <label for="none">None</label>
+                <input type="checkbox" name="none" id="none">
+            <br class="none"/>
+                Gender
+            <br class="gender"/>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male" value="male">
+            <br class="male"/>
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="female" value="female">
+            <br class="female"/>
+                <label for="bio">Bio</label>
+                <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+            <br class="txt_field"/>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </form>
+
+    </body>
+</html>
