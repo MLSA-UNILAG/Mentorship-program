@@ -11,10 +11,9 @@ app.config['SECRET_KEY'] = 'lc\xf6\xa5\x90LJ\x17=68\x9eK\x9dtM?%\x8b\xb8\xb0cvo'
 
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
-# mysql = MySQL(app)
 
-from app.main import main
-from app.users import users
+from core.main import main
+from core.users import users
 
 app.register_blueprint(main)
 app.register_blueprint(users)

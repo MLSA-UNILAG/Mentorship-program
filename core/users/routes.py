@@ -1,11 +1,11 @@
-from app import app, db
-from app import login_manager
+from core import app, db
+from core import login_manager
 from flask import Flask, render_template, redirect, flash, url_for, request, session
-from app.forms import LoginForm, SignUpForm
+from core.forms import LoginForm, SignUpForm
 from flask_login import login_user,logout_user,current_user, login_required
-from app.models import User
+from core.models import User
 
-from app.users import users
+from core.users import users
 
 
 @login_manager.user_loader

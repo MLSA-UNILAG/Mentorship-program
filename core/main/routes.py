@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from app.main import main
+from core.main import main
 
 
 @main.route('/', methods=['GET', 'POST'])
