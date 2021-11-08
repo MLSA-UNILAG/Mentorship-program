@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <p class="mr-2">{{ post.author.username}}</p>
+            <small class="text-muted">{{ post.date_created.date() }}</small>
+        </div>
+        <h2 class="article-title">{{ post.title }}</h2>
+        <p class="article-content">{{ post.content }}</p>
+    </div>
+</article>
+    <a href="{{ url_for('writer.edit_post',post_id=post.id) }}" class="btn btn-sm btn-outline-secondary">Edit Post</a>
+    <a href="{{ url_for('writer.delete_post',post_id=post.id) }}" class="btn btn-sm btn-outline-secondary">Delete Post</a>
+
+{% endblock %}
