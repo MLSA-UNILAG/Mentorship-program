@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <h3 class="mr-2" style="display: inline-block;">{{ user.username}}</h3>
+            {% if current_user == user %}
+                <a href="{{ url_for('main.edit_profile',username=user.username) }}"
+                    class="btn btn-outline-secondary">EditProfile</a>
+            {% endif %}
+            {% if user.is_writer == 'Yes' %}
+                <h5 class="text-muted ml-2" style="display: inline-block;">Writer</h5>
+            {% else %}
+                <h6 class="text-muted ml-2" style="display: inline-block;">User</h6>
+            {% endif %}
+        </div>
+        <br>
+    </div>
+</article>
+<br>
+{% if user.is_writer == 'Yes' %}
+    {% if user.posts | length == 1 %}
+        <h5 class="text-muted">{{ user.posts | length }} Post</h5>
+    {% else %}
+    <h5 class="text-muted">{{ user.posts | length }} Posts</h5>
+    {% endif %}
+{% endif %}
+
+{% for post in user.posts %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <small class="text-muted">{{ post.date_created.date() }}</small>
+            </div>
+            {% if current_user == post.author %}
+                <h2><a class="article-title" href="{{ url_for('writer.post',post_id=post.id) }}">{{ post.title }}</a></h2>
+            {% else %}
+                <h2 class="article-title">{{ post.title }}</h2>
+            {% endif %}
+            <p class="article-content">{{ post.content }}</p>
+        </div>
+    </article>
+{% endfor %}
+
+{% endblock %}

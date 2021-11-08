@@ -18,16 +18,24 @@
         </form>
         <div class="nav navbar-nav nabvar-right">
             {% if current_user.is_authenticated %}
-            <li class="nav-item">
-                <a href="{{ url_for('users.logout') }}" class="nav-link">Log out</a>
-            </li>
+                {% if current_user.is_writer == 'Yes' %}
+                    <li class="nav-item">
+                        <a href="{{ url_for('writer.new_post') }}" class="nav-link">New Post</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a href="{{ url_for('main.profile',username=current_user.username) }}" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('user.logout') }}" class="nav-link">Log out</a>
+                </li>
             {% else %}
-            <li class="nav_item">
-                <a href="{{ url_for('users.login') }}" class="nav-link">Log In</a>
-            </li>
-            <li class="nav_item">
-                <a href="{{ url_for('users.signup') }}" class="nav-link">Sign Up</a>
-            </li>
+                    <li class="nav_item">
+                        <a href="{{ url_for('main.login') }}" class="nav-link">Log In</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="{{ url_for('main.signup') }}" class="nav-link">Sign Up</a>
+                    </li>
             {% endif %}
         </div>
     </div>
